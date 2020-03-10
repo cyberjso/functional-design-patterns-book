@@ -3,6 +3,7 @@ package io.functional.patterns.tinyweb.greetingapp
 import io.functional.patterns.tinyweb.FunctionView
 import io.functional.patterns.tinyweb.FunctionController
 import io.functional.patterns.tinyweb.HttpRequest
+import io.functional.patterns.tinyweb.TinyWeb
 
 import scala.util.Random
 
@@ -34,6 +35,6 @@ object TiniyWebApp {
 
   def tinyweb = new TinyWeb( Map("/greeting" -> greetingController), List(loggingFilter))
   
-  def testHttpRequest = HttpRequest(body = "Mike,Joe,John,Steve", path = "/greeting")
+  def testHttpRequest = HttpRequest(headers  = Map[String, String](), body = "Mike,Joe,John,Steve", path = "/greeting")
 
 }
